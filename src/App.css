@@ -140,6 +140,12 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+@media only screen and (max-width: 590px) {
+ .content_div_type1 {
+  margin-bottom: 1rem;
+ }
+}
+
 .calendar-content_div {
   padding-left: 5%;
   padding-right: 5%;
@@ -170,6 +176,8 @@
   border: 2px solid #FFFFFF;
   padding: 18px 50px;
   cursor: pointer;
+  text-decoration: none;
+  color: #FFFFFF;
 
 }
 
