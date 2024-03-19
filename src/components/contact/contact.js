@@ -4,12 +4,9 @@ import './contact.css';
 import emailjs from '@emailjs/browser';
 
 
-export default (props) => {
-  // const [firstName, setFirstName] = useState('');
-  // const [lastName, setLastname] = useState('');
+export default function Contact () {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  // const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [nameError, setNameError] = useState(false);
@@ -21,7 +18,7 @@ export default (props) => {
       return true;
     }
   }
-  
+
   function submitForm(name, email, message) {
     if (!name || name.length === 0) {
       setNameError(true);
@@ -55,7 +52,6 @@ export default (props) => {
       });
   };
 
-  //if submitted and values correct, switch to display Thank you   
   return (
     <div className="content_div_type3">
       <div className='contact-subheader'>
@@ -94,7 +90,4 @@ export default (props) => {
       </div>
     </div>
   )
-
-
-
 }

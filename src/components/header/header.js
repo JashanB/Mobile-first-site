@@ -7,7 +7,7 @@ import menu from '../../images/icons8-hamburger-menu-24.png';
 import close from '../../images/icons8-close-24.png'
 import { HashLink as Link } from 'react-router-hash-link';
 
-export default (props) => {
+export default function Header (props) {
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = -70;
