@@ -238,8 +238,13 @@
   .text_box_1 {
     width: 100%;
     max-height: 200px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .book_button_div_left {
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
   }
 
 }
