@@ -93,8 +93,7 @@
 
   }
   .background_breakpoint2 {
-    height: 160px;
-
+    display: none;
   }
 }
 .main_div_type2 {
