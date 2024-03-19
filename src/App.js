@@ -103,7 +103,7 @@ function App() {
                   <h3>Let me teach you!</h3>
                 </div>
                 <div className='book_button_div'>
-                  <Link to="/#book" className='book_button' onClick='link to id book'>Book an Appointment</Link>
+                  <Link to="/#book" className='book_button'>Book an Appointment</Link>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@ function App() {
                   </div>
                 </div>
                 <div className='book_button_div_left'>
-                  <Link to="/#book" className='book_button' onClick='link to id book'>Book an Appointment</Link>
+                  <Link to="/#book" className='book_button'>Book an Appointment</Link>
                 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@ function App() {
                     </p>
                   </div>
                   <div className='book_button_div'>
-                    <Link to="/#book" className='book_button' onClick='link to id book'>Book an Appointment</Link>
+                    <Link to="/#book" className='book_button'>Book an Appointment</Link>
                   </div>
                 </div>
               </div>
