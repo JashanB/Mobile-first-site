@@ -62,30 +62,8 @@ function App() {
 
   }, [windowSize.width]);
 
-  // useEffect(() => {
-  //   // if not a hash link, scroll to top
-  //   if (hash === '') {
-  //     window.scrollTo(0, 0);
-  //   }
-  //   // else scroll to id
-  //   else {
-  //     setTimeout(() => {
-  //       const id = hash.replace('#', '');
-  //       const element = document.getElementById(id);
-  //       if (element) {
-  //         element.scrollIntoView();
-  //       }
-  //     }, 0);
-  //   }
-  // }, [pathname, hash, key]);
-
   return (
-    // <Switch>
-    //   <Route path="/" />
-    // </Switch>
     <Router>
-
-
       <div className="App">
         <Header breakpoint600={breakpoint600} expanded={expanded} setExpanded={setExpanded} />
         {!expanded &&
@@ -109,7 +87,6 @@ function App() {
 
             </div>
             {/* SECTIION 2 */}
-
             <div id="services" className="main_div_type1">
               <div className='content_div_type1'>
                 <div className='subheader'>
@@ -198,17 +175,6 @@ function App() {
       </div>
     </Router>
   );
-  // return (
-  //   <Router>
-  //   <Header />
-  //   <div className="App">
-  //     <Switch>
-  //       <Route path='/' render={(props) => <Home {...props} />} />
-  //       <Route path='/confirmation' render={(props) => <Search {...props} />} />
-  //     </Switch>
-  //   </div>
-  // </Router>
-  // );
 }
 
 export default App;
