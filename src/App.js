@@ -58,7 +58,7 @@ function App() {
       setBreakPoint738(true);
     }
 
-  }, [windowSize.width]);
+  }, [window.innerWidth]);
 
   return (
     <Router>
