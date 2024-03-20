@@ -23,13 +23,11 @@ function App() {
   const [breakpoint600, setBreakPoint600] = useState(false);
   const [breakpoint900, setBreakPoint900] = useState(false);
   const [breakpoint738, setBreakPoint738] = useState(false);
-  // const { pathname, hash, key } = useLocation();
-
-
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
   });
+  
   const handleResize = () => {
     setWindowSize({
       width: window.innerWidth,
