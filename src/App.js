@@ -18,37 +18,88 @@ import contact from "./images/contact.jpg";
 import fancy from "./images/fancy1.jpg"
 
 
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return windowSize;
+}
+
 function App() {
   const [expanded, setExpanded] = useState(false);
   const [breakpoint600, setBreakPoint600] = useState(false);
   const [breakpoint900, setBreakPoint900] = useState(false);
   const [breakpoint738, setBreakPoint738] = useState(false);
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-  
-  const handleResize = () => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
+  // const [windowSize, setWindowSize] = useState({
+  //   width: undefined,
+  //   height: undefined,
+  // });
+  const { width } = useWindowSize();
+
+
+  // const handleResize = () => {
+  //   setWindowSize({
+  //     width: window.innerWidth,
+  //     height: window.innerHeight,
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener('resize', handleResize);
+  //   handleResize();
+
+  //   if (windowSize['width'] && windowSize['width'] >= 900) {
+  //     setBreakPoint900(true);
+  //     setBreakPoint738(false);
+  //     setBreakPoint600(false);
+
+  //   } else if (windowSize['width'] && windowSize['width'] < 900 && windowSize['width'] >= 738) {
+  //     setBreakPoint600(false);
+  //     setBreakPoint900(false);
+  //     setBreakPoint738(false);
+  //   } else if (windowSize['width'] && windowSize['width'] < 738 && windowSize['width'] >= 600) {
+  //     setBreakPoint600(false);
+  //     setBreakPoint900(false);
+  //     setBreakPoint738(true);
+  //   } else {
+  //     setBreakPoint600(true);
+  //     setBreakPoint900(false);
+  //     setBreakPoint738(true);
+  //   }
+
+  // }, [window.innerWidth]);
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    // window.addEventListener('resize', handleResize);
+    // handleResize();
 
-    if (windowSize['width'] && windowSize['width'] >= 900) {
+    if (width >= 900) {
       setBreakPoint900(true);
       setBreakPoint738(false);
       setBreakPoint600(false);
 
-    } else if (windowSize['width'] && windowSize['width'] < 900 && windowSize['width'] >= 738) {
+    } else if (width < 900 && width >= 738) {
       setBreakPoint600(false);
       setBreakPoint900(false);
       setBreakPoint738(false);
-    } else if (windowSize['width'] && windowSize['width'] < 738 && windowSize['width'] >= 600) {
+    } else if (width < 738 && width >= 600) {
       setBreakPoint600(false);
       setBreakPoint900(false);
       setBreakPoint738(true);
@@ -57,8 +108,10 @@ function App() {
       setBreakPoint900(false);
       setBreakPoint738(true);
     }
+  }, [width]);
 
-  }, [window.innerWidth]);
+  
+  console.log(window.innerWidth)
 
   return (
     <Router>
@@ -126,10 +179,10 @@ function App() {
                   </div>
                   <div className='text_box_3'>
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id turpis erat. Ut ornare ante lacus, ac pharetra libero volutpat eu. Mauris scelerisque velit ac odio tempor, ut fringilla orci pharetra. Quisque ut tellus tempor dolor pulvinar volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla pellentesque metus quis quam eleifend, eu tincidunt nibh ornare. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent efficitur mauris ac ligula tempus vestibulum. Etiam ultricies dui nibh, vel aliquam nibh malesuada vitae. Suspendisse accumsan eleifend velit, vitae euismod quam congue at.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id turpis erat. Ut ornare ante lacus, ac pharetra libero volutpat eu. Mauris scelerisque velit ac odio tempor, ut fringilla orci pharetra. Quisque ut tellus tempor dolor pulvinar volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla pellentesque metus quis quam eleifend, eu tincidunt nibh ornare. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent efficitur mauris ac ligula tempus vestibulum. Etiam ultricies dui nibh, vel aliquam nibh malesuada vitae. Suspendisse accumsan eleifend velit, vitae euismod quam congue at.
                     </p>
                     <p>
-                    Nunc fermentum pulvinar nibh, non tempus mauris efficitur ac. In hac habitasse platea dictumst. Suspendisse mattis arcu quam, eget efficitur nulla aliquet nec. Donec feugiat felis mi, a dignissim tortor mollis a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam pellentesque metus in ullamcorper hendrerit. Curabitur scelerisque magna eget leo interdum convallis. Praesent a interdum urna. Nulla tincidunt quam tincidunt enim ornare varius. Sed bibendum dui quis orci iaculis feugiat. In hac habitasse platea dictumst. Sed quis lacus et dolor gravida maximus a non mi. Donec et magna eget eros ullamcorper malesuada.
+                      Nunc fermentum pulvinar nibh, non tempus mauris efficitur ac. In hac habitasse platea dictumst. Suspendisse mattis arcu quam, eget efficitur nulla aliquet nec. Donec feugiat felis mi, a dignissim tortor mollis a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam pellentesque metus in ullamcorper hendrerit. Curabitur scelerisque magna eget leo interdum convallis. Praesent a interdum urna. Nulla tincidunt quam tincidunt enim ornare varius. Sed bibendum dui quis orci iaculis feugiat. In hac habitasse platea dictumst. Sed quis lacus et dolor gravida maximus a non mi. Donec et magna eget eros ullamcorper malesuada.
                     </p>
                   </div>
                   <div className='book_button_div'>
