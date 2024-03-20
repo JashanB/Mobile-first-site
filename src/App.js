@@ -1,15 +1,11 @@
 import './App.css';
 import React from 'react';
 import { useState, useEffect } from "react";
-// import axios from 'axios';
 import Header from './components/header';
 import Contact from './components/contact';
 import { InlineWidget } from "react-calendly";
-// import { Route, Switch, useLocation, BrowserRouter as Router } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-
 import { HashLink as Link } from 'react-router-hash-link';
-
 import './App.css';
 import background from "./images/bg10.jpeg"
 import background2 from "./images/bg1lg.jpg";
@@ -17,7 +13,7 @@ import head from "./images/head2.jpg";
 import contact from "./images/contact.jpg";
 import fancy from "./images/fancy1.jpg"
 
-
+//handle resizing
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -47,49 +43,9 @@ function App() {
   const [breakpoint600, setBreakPoint600] = useState(false);
   const [breakpoint900, setBreakPoint900] = useState(false);
   const [breakpoint738, setBreakPoint738] = useState(false);
-  // const [windowSize, setWindowSize] = useState({
-  //   width: undefined,
-  //   height: undefined,
-  // });
   const { width } = useWindowSize();
 
-
-  // const handleResize = () => {
-  //   setWindowSize({
-  //     width: window.innerWidth,
-  //     height: window.innerHeight,
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('resize', handleResize);
-  //   handleResize();
-
-  //   if (windowSize['width'] && windowSize['width'] >= 900) {
-  //     setBreakPoint900(true);
-  //     setBreakPoint738(false);
-  //     setBreakPoint600(false);
-
-  //   } else if (windowSize['width'] && windowSize['width'] < 900 && windowSize['width'] >= 738) {
-  //     setBreakPoint600(false);
-  //     setBreakPoint900(false);
-  //     setBreakPoint738(false);
-  //   } else if (windowSize['width'] && windowSize['width'] < 738 && windowSize['width'] >= 600) {
-  //     setBreakPoint600(false);
-  //     setBreakPoint900(false);
-  //     setBreakPoint738(true);
-  //   } else {
-  //     setBreakPoint600(true);
-  //     setBreakPoint900(false);
-  //     setBreakPoint738(true);
-  //   }
-
-  // }, [window.innerWidth]);
-
   useEffect(() => {
-    // window.addEventListener('resize', handleResize);
-    // handleResize();
-
     if (width >= 900) {
       setBreakPoint900(true);
       setBreakPoint738(false);
@@ -109,9 +65,6 @@ function App() {
       setBreakPoint738(true);
     }
   }, [width]);
-
-  
-  console.log(window.innerWidth)
 
   return (
     <Router>
@@ -221,8 +174,6 @@ function App() {
             </div>
           </div>
         }
-
-
       </div>
     </Router>
   );
