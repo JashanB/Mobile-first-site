@@ -46,7 +46,7 @@ export default function Header (props) {
         <div>
           <h3>Your Name</h3>
         </div>
-        <div id="logo"><img alt="" src={twitter}></img></div>
+        <div className="logo"><img alt="" src={twitter}></img></div>
         <div className='desktop-nav-social'>
           <Link to="/#" className='icon' href={"https://twitter.com/katelynfinance"}><img alt="" src={twitter}></img></Link>
           <Link to="/#" className='icon' href={"facebook.com"}><img alt="" src={facebook}></img></Link>

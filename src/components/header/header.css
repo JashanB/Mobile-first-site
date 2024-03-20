@@ -99,3 +99,7 @@
     padding-right: 6px;
     padding-left: 6px;
 }
+
+.logo {
+    display: none;
+}
